@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humai_project"
+version = "0.1.0"
+description = "Proyecto base con Integración Continua"
+authors = [{ name = "Vicente Monteverde" }]
+requires-python = ">=3.10"
+
+dependencies = [
+    "pandas",
+    "numpy"
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+# Se agregan opciones para reporte de cobertura y fallo si es menor al 60%
+addopts = "-ra -q --cov=application --cov-report=term-missing --cov-fail-under=60"
+testpaths = ["tests"]
+
+[tool.mypy]
+# Configuración para que mypy analice tu carpeta de código
+files = ["application/*.py"]
+strict = true
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+exclude = ["__pycache__"]
+
+[tool.ruff.lint]
+# Se mueve 'select' aquí para cumplir con la nueva versión de Ruff
+select = ["E", "F", "W", "I", "B", "C4", "UP"]

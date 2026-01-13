@@ -1,0 +1,7 @@
+.venv/
+.idea/
+.coverage
+**/__pycache__/
+htmlcov/
+.*_cache/
+.DS_Store
