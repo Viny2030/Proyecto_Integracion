@@ -1,4 +1,5 @@
 import pytest
+
 from application.codigo_muestra import (
     calcular_score_riesgo,
     clasificar_riesgo,
