@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humai_project"
+version = "0.1.0"
+description = "Proyecto base con Integración Continua"
+authors = [{ name = "Vicente Monteverde" }]
+requires-python = ">=3.10"
+
+dependencies = [
+    "pandas",
+    "numpy"
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W"]
+exclude = ["__pycache__"]
